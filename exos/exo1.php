@@ -44,6 +44,18 @@ require_once '../inc/functions.php';
 // ------------------------
 
 
+class Mario {
+    // propriétés
+    public $lives = 3;
+        
+    public function __construct()
+    {
+        
+        // $this est l'instance, l'objet qui utilise la classe
+        // $this représente l'instance de l'extérieur
+       
+    }
+} 
 
 // ------------------------
 // END OF YOUR CODE
@@ -54,3 +66,5 @@ require_once '../inc/functions.php';
  * Do not touch.
  */
 check(1);
+
+// temps 10mn

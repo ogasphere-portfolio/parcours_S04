@@ -51,6 +51,47 @@ require_once '../inc/functions.php';
 // ------------------------
 // START OF YOUR CODE
 // ------------------------
+class Mario{
+    // propriétés
+    private $lives = 3;
+
+    public function __construct()
+    {
+
+        // $this est l'instance, l'objet qui utilise la classe
+        // $this représente l'instance de l'extérieur
+
+    }
+
+    /**
+     * Get the value of lives
+     */
+    public function getLives()
+    {
+        return $this->lives;
+    }
+
+    /**
+     * Set the value of lives
+     *
+     * @return  self
+     */
+    public function setLives($lives)
+    {
+        $this->lives = $lives;
+
+        return $this;
+    }
+
+    public function takeHit()
+    {
+        $this->lives = $this->lives -1;
+    }
+    public function up()
+    {
+        $this->lives = $this->lives +1;
+    }
+}
 
 
 
@@ -63,3 +104,6 @@ require_once '../inc/functions.php';
  * Pas touche !
  */
 check(3);
+
+
+//temps 8mn

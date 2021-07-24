@@ -44,6 +44,52 @@ require_once '../inc/functions.php';
 // ------------------------
 // START OF YOUR CODE
 // ------------------------
+class Hero{
+    // propriétés
+    private $lives = 3;
+    private $firstname;
+
+    public function __construct($firstname)
+    {
+
+        // $this est l'instance, l'objet qui utilise la classe
+        // $this représente l'instance de l'extérieur
+        $this->firstname = $firstname;
+    }
+
+    /**
+     * Get the value of lives
+     */
+    public function getLives()
+    {
+        return $this->lives;
+    }
+
+    /**
+     * Set the value of lives
+     *
+     * @return  self
+     */
+    public function setLives($lives)
+    {
+        $this->lives = $lives;
+
+        return $this;
+    }
+
+    public function takeHit()
+    {
+        $this->lives = $this->lives -1;
+    }
+    public function up()
+    {
+        $this->lives = $this->lives +1;
+    }
+    public function hello()
+    {
+       return "It's me, ".$this->firstname."!";
+    }
+}
 
 
 
@@ -59,3 +105,5 @@ check(4);
 /*
 $mamie = new Hero('Mamie PHP');
 displayExo(4, method_exists($mamie, 'hello') && $mamie->hello() === "It's me, Mamie PHP!");*/
+
+// temps 14mn   Cumul 39mn
