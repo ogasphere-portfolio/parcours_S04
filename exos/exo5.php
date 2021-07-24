@@ -128,7 +128,7 @@ class Hero{
     
 }
 
-
+// Temps 1h Cumul 1H40 + exo6  20mn Total 2H
 
 
 // ------------------------
@@ -209,4 +209,3 @@ if ($test) {
 }
 displayExo(5, $test);
 
-// Temps 1h Cumul 1H40
