@@ -29,6 +29,105 @@ require_once '../inc/functions.php';
 // ------------------------
 // START OF YOUR CODE
 // ------------------------
+class Hero{
+    // propriétés
+    private $lives = 3;
+    private $firstname;
+    private $color;
+    private $star = 0;
+
+    public function __construct($firstname,$color)
+    {
+
+        // $this est l'instance, l'objet qui utilise la classe
+        // $this représente l'instance de l'extérieur
+        $this->firstname = $firstname;
+        $this->setColor($color);
+    }
+
+    /**
+     * Get the value of lives
+     */
+    public function getLives()
+    {
+        return $this->lives;
+    }
+
+    
+    /**
+     * Set the value of lives
+     *
+     * @return  self
+     */
+    public function setLives($lives)
+    {
+        $this->lives = $lives;
+
+        return $this;
+    }
+
+    public function takeHit()
+    {
+        $this->lives = $this->lives -1;
+    }
+    public function up()
+    {
+        $this->lives = $this->lives +1;
+    }
+    public function hello()
+    {
+       return "It's me, ".$this->firstname."!";
+    }
+    /**
+     * Get the value of color
+     */ 
+    public function getColor()
+    {
+        return $this->color;
+    }
+
+    /**
+     * Set the value of color
+     *
+     * @return  self
+     */ 
+    public function setColor($color)
+    {
+        $this->color = $color;
+
+        return $this;
+    }
+    public function isBig(){
+        if ($this->lives == 4){
+            return true;
+        }
+        return false;
+
+    }
+    public function hasStar(){
+        if ($this->star == 0){
+            return false;
+            }
+        return true;
+        
+    }
+    public function eatMushroom(){
+        $this->up();
+    }
+    public function receiveStar(){
+        $this->lives = 6;
+        $this->star = 1;
+        $this->hasStar() ;
+    }
+    public function vanishStar(){
+        $this->star = 0;
+        $this->hasStar(false);
+        $this->up();
+    
+    }
+    
+}
+
 
 
 
@@ -46,7 +145,13 @@ $test = (
     && $mario->isBig() === false
     && $mario->hasStar() === false
     && $mario->getLives() === 3
+
+    
+
+    
 );
+
+
 if ($test) {
     $mario->takeHit();
     $test = $mario->getLives() === 2;
@@ -54,27 +159,39 @@ if ($test) {
         $mario->up();
         $mario->eatMushroom();
         $test = $mario->isBig() === true;
+        
         if ($test) {
             $mario->takeHit();
             $test = (
                 $mario->isBig() === false
                 && $mario->getLives() === 3
             );
+            
             if ($test) {
                 $mario->receiveStar();
                 $test = $mario->hasStar() === true;
+                
                 if ($test) {
                     $mario->takeHit();
                     $mario->takeHit();
                     $mario->takeHit();
                     $test = $mario->getLives() === 3;
                     
-                    if($test){
+                            if($test){
                         $mario->eatMushroom();
+                        
+
                         $mario->takeHit();
+                       
+
                         $mario->takeHit();
+                        
+                        
                         $mario->up();
+                        
+                        
                         $mario->vanishStar();
+                       
                         $test = (
                             $mario->getLives() === 4
                             && $mario->hasStar() === false
@@ -85,5 +202,11 @@ if ($test) {
             }
         }
     }
+
+    
+
+    
 }
 displayExo(5, $test);
+
+// Temps 1h Cumul 1H40
