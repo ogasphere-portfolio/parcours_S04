@@ -29,13 +29,23 @@ require_once '../inc/functions.php';
 // ------------------------
 // START OF YOUR CODE
 // ------------------------
+
+/**
+ * class hero
+ */
 class Hero{
     // propriétés
     private $lives = 3;
     private $firstname;
     private $color;
-    private $star = 0;
+    private $star = false;
 
+    /**
+     * fonction constructeur
+     *
+     * @param [string] $firstname
+     * @param [string] $color
+     */
     public function __construct($firstname,$color)
     {
 
@@ -66,14 +76,29 @@ class Hero{
         return $this;
     }
 
+    /**
+     * on decremente le nombre de vies
+     *
+     * @return void
+     */
     public function takeHit()
     {
         $this->lives = $this->lives -1;
     }
+    /**
+     * on incremente le nombre de vies
+     *
+     * @return void
+     */
     public function up()
     {
         $this->lives = $this->lives +1;
     }
+    /**
+     * on se présente
+     *
+     * @return void
+     */
     public function hello()
     {
        return "It's me, ".$this->firstname."!";
@@ -97,6 +122,11 @@ class Hero{
 
         return $this;
     }
+    /**
+     * est-ce qu'on a 4 vies
+     *
+     * @return boolean
+     */
     public function isBig(){
         if ($this->lives == 4){
             return true;
@@ -104,23 +134,41 @@ class Hero{
         return false;
 
     }
+    /**
+     * est-ce qu'on a une etoile
+     *
+     * @return boolean
+     */
     public function hasStar(){
-        if ($this->star == 0){
-            return false;
-            }
-        return true;
+       
+        return $this->star;
         
     }
+    /**
+     * eat a mush
+     *
+     * @return void
+     */
     public function eatMushroom(){
         $this->up();
     }
+    /**
+     * Receive à Star
+     *
+     * @return void
+     */
     public function receiveStar(){
         $this->lives = 6;
-        $this->star = 1;
+        $this->star = true;
         $this->hasStar() ;
     }
+    /**
+     * Lose a Star
+     *
+     * @return void
+     */
     public function vanishStar(){
-        $this->star = 0;
+        $this->star = false;
         $this->hasStar(false);
         $this->up();
     
