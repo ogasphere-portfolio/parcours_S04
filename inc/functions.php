@@ -248,9 +248,7 @@ function displayHtml($data, $result, $content='') {
 	</main>
 
 	<footer id="footer">
-		
-		
-		<p>Ogasphere</p>
+	    <p>Ogasphere</p>
 	</footer>
 
 	<script src="../js/jquery.min.js"></script>

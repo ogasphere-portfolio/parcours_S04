@@ -3,8 +3,8 @@ var exos = [
   {nav: '#2', title: 'Exo #2', file: 'exo2.php'},
   {nav: '#3', title: 'Exo #3', file: 'exo3.php'},
   {nav: '#4', title: 'Exo #4', file: 'exo4.php'},
-  {nav: '#5', title: 'Exo Bonus #5', file: 'exo5.php'},
-  {nav: '#6', title: 'Quiz #6', file: 'https://forms.gle/ipdueSbaJUwCuwRP7'}
+  {nav: '#5', title: 'Exo Bonus #5', file: 'exo5.php'}
+ // {nav: '#6', title: 'Quiz #6', file: 'https://forms.gle/ipdueSbaJUwCuwRP7'}
 ];
 
 var app = {
